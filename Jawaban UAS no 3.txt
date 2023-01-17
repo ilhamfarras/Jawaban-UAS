@@ -1,37 +1,43 @@
+import javax.print.attribute.standard.RequestingUserName;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class facebook {
-    private String post;
-    private String beranda;
-    private  String market;
-    private String grup;
+    private String Posted;
+    private String UserName;
+    private  String FullName;
+    private String myPost;
     private String halaman;
 
-    public void setPost(String post) {
-        this.post = post;
+    public String getPosted() {
+        return Posted;
+    }
+    public void setPosted(String Posted) {
+        this.Posted = Posted;
     }
 
-    public String getBeranda() {
-        return beranda;
+    public String getUserName() {
+        return UserName;
     }
 
-    public void setBeranda(String beranda) {
-        this.beranda = beranda;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
-    public String getMarket() {
-        return market;
+    public String getFullName() {
+        return FullName;
     }
 
-    public void setMarket(String market) {
-        this.market = market;
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
     }
 
-    public String getGrup() {
-        return grup;
+    public String getmyPost() {
+        return myPost;
     }
 
-    public void setGrup(String grup) {
-        this.grup = grup;
+    public void setmyPost(String myPost) {
+        this.myPost = myPost;
     }
 
     public String getHalaman() {
@@ -41,17 +47,30 @@ public class facebook {
     public void setHalaman(String halaman) {
         this.halaman = halaman;
     }
+    public facebook(){
+    }
 
-    public String getPost(){
-     return post;
-}
-public facebook(){
-}
+    public facebook(String pst,String brd,String mrt,String mpst,String hlm) {
+        this.Posted = pst;
+        this.UserName = brd;
+        this.myPost = mpst;
+        this.FullName = mrt;
+        this.halaman = hlm;
+    }
+    public void ShowNumberOfPost() {
 
-public facebook(String pst,String brd,String mrt,String grp,String hlm) {
-    this.post = pst;
-    this.beranda = brd;
-    this.market = mrt;
-    this.halaman = hlm;
-}
+    }
+    public static void main(String []args) {
+        int jumPost = 4;
+        Scanner sc = new Scanner(System.in);
+        facebook user1 = new facebook();
+        user1.setUserName("dbgb4a");
+        user1.setFullName("Debby Gibson");
+        ArrayList<String> myPost = new ArrayList<>();
+        for(int index=0;index<jumPost;index++){
+            myPost.add(sc.nextLine());
+        }
+        user1.setPosted(myPost);
+        System.out.println("Total Posted : " + user1.ShowNumberOfPost());
+    }
 }
